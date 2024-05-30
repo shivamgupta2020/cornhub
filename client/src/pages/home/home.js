@@ -27,12 +27,18 @@ function Home() {
             .catch((err) => console.log(err));
     }, []);
 
+    const updateVideoLikes = (videoId, newLikes) => {
+        setVideos(prevVideos => prevVideos.map(video =>
+            video._id === videoId ? { ...video, like: newLikes } : video
+        ));
+    };
+
     return (
         <div>
             <div className="home-div">
                 <div className="home-container">
                     <div className="home-text">
-                        <div className="line1" >
+                        <div className="line1">
                             <p>Hottest ticker on Cronos is</p>
                             <div className="cornhub">$CORNHUB</div>
                         </div>
@@ -65,7 +71,7 @@ function Home() {
                                     </div>
                                 </div>
                             ))}
-                        {isModalOpen && <Modal video={currentVideo} onClose={closeModal} />}
+                        {isModalOpen && <Modal video={currentVideo} onClose={closeModal} updateLikes={updateVideoLikes} />}
                     </div>
                 </div>
             </div>
@@ -94,7 +100,7 @@ const LoadingPlaceholder = () => (
     </div>
 );
 
-const Modal = ({ onClose, video }) => {
+const Modal = ({ onClose, video, updateLikes }) => {
     const [likes, setLikes] = useState(video.like);
 
     const handleLikeClick = async () => {
@@ -105,7 +111,7 @@ const Modal = ({ onClose, video }) => {
             await axios.put(`https://cornhub-backend.vercel.app/update-video/${video._id}`, {
                 like: newLikes
             });
-            updateLikes(video._id, newLikes);
+            updateLikes(video._id, newLikes); // Update likes in the Home component
         } catch (error) {
             console.error('Error updating likes in database:', error);
         }
