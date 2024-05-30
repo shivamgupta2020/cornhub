@@ -4,15 +4,15 @@ const {Schema} = mongoose;
 const videoSchema = new Schema({
     title:{
         type: String,
-        required: true
+        required: false
     },
     link:{
         type: String,
-        required: true
+        required: false
     },
     share_link:{
         type: String,
-        required: true
+        required: false
     },
     like:{
         type: Number,
