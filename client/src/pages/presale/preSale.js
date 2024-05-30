@@ -1,11 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './preSale.css'
 
 function PreSale() {
     const string = '0x7fbB28b8B6daFD35168C7E1f90bfF91b4138d7D4';
+    const [buttonText, setButtonText] = useState('COPY');
+
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(string).then().catch();
+        navigator.clipboard.writeText(string)
+            .then(() => {
+                setButtonText('COPIED');
+                setTimeout(() => {
+                    setButtonText('COPY');
+                }, 2000); // Reset to "COPY" after 2 seconds
+            })
+            .catch((err) => {
+                console.error('Failed to copy text: ', err);
+            });
+
     };
     return (
         <div>
@@ -107,7 +119,7 @@ function PreSale() {
                             <div className="tokenid" style={{margin:"10px"}}>
                                 <span>{string}</span>
                                 <button onClick={copyToClipboard} style={{ backgroundColor: '#ff9900', padding: '4px 8px', fontWeight: 'bold', borderRadius: "15px", border: "none"}}>
-                                    COPY
+                                    {buttonText}
                                 </button>
                             </div>
                             <div className="last-text">

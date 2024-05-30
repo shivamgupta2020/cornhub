@@ -32,7 +32,7 @@ function Home() {
             <div className="home-div">
                 <div className="home-container">
                     <div className="home-text">
-                        <div className="line1">
+                        <div className="line1" >
                             <p>Hottest ticker on Cronos is</p>
                             <div className="cornhub">$CORNHUB</div>
                         </div>
@@ -94,46 +94,63 @@ const LoadingPlaceholder = () => (
     </div>
 );
 
-const Modal = ({ onClose, video }) => (
-    <div className="modal" onClick={onClose}>
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <iframe width="100%" height="400" src={`https://www.youtube.com/embed/${video.link}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            <div className="line2">
-                <div className="line2-left">
-                    <p style={{ fontSize: "25px" }} id='tille'>{video.title}</p>
-                    <p style={{ fontSize: "15px" }} id='creator'>Creator - Cornhub</p>
+const Modal = ({ onClose, video }) => {
+    const [likes, setLikes] = useState(video.like);
+
+    const handleLikeClick = async () => {
+        const newLikes = likes + 1;
+        setLikes(newLikes);
+
+        try {
+            await axios.post(`https://cornhub-backend.vercel.app/update-video/${video._id}`, {
+                like: newLikes
+            });
+        } catch (error) {
+            console.error('Error updating likes in database:', error);
+        }
+    };
+
+    return (
+        <div className="modal" onClick={onClose}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <iframe width="100%" height="400" src={`https://www.youtube.com/embed/${video.link}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <div className="line2">
+                    <div className="line2-left">
+                        <p style={{ fontSize: "25px" }} id='tille'>{video.title}</p>
+                        <p style={{ fontSize: "15px" }} id='creator'>Creator - Cornhub</p>
+                    </div>
+                    <div className="line2-right">
+                        <div className="line2-right-top" onClick={handleLikeClick}>
+                            <img src={require('./like_unfill.png')} style={{ width: "30px", height: "30px" }} id='like_button' />
+                            <p id='like'>{`Like (${likes})`}</p>
+                        </div>
+                        <div className="line2-right-bottom">
+                            <p style={{ textAlign: "end" }}>Tip Creator</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="line2-right">
-                    <div className="line2-right-top">
-                        <img src={require('./like_unfill.png')} style={{ width: "30px", height: "30px" }} id='like_button' />
-                        <p id='like'>{`Like (${video.like})`}</p>
+                <div className="line3">
+                    <div className="panel-socials">
+                        <div className="panel-socialicon">
+                            <a href={`${video.share_link}`}><img src={require("./twitter.webp")} alt="" /></a>
+                        </div>
+                        <div className="panel-socialicon">
+                            <a href="https://t.me/+tWDMIwqW0zthNTYx"><img src={require("./telegram.webp")} alt="" /></a>
+                        </div>
+                        <div className="panel-socialicon">
+                            <a href="https://discord.com/invite/VQEmnUzDKV"><img src={require("./discord.webp")} alt="" /></a>
+                        </div>
+                        <div className="panel-socialicon">
+                            <img src={require("./dexscreener.webp")} alt="" />
+                        </div>
                     </div>
-                    <div className="line2-right-bottom">
-                        <p style={{ textAlign: "end" }}>Tip Creator</p>
+                    <div className="close">
+                        <p onClick={onClose}>Close</p>
                     </div>
-                </div>
-            </div>
-            <div className="line3">
-                <div className="panel-socials">
-                    <div className="panel-socialicon">
-                        <a href={`${video.share_link}`}><img src={require("./twitter.webp")} alt="" /></a>
-                    </div>
-                    <div className="panel-socialicon">
-                        <a href="https://t.me/+tWDMIwqW0zthNTYx"><img src={require("./telegram.webp")} alt="" /></a>
-                    </div>
-                    <div className="panel-socialicon">
-                        <a href="https://discord.com/invite/VQEmnUzDKV"><img src={require("./discord.webp")} alt="" /></a>
-                    </div>
-                    <div className="panel-socialicon">
-                        <img src={require("./dexscreener.webp")} alt="" />
-                    </div>
-                </div>
-                <div className="close">
-                    <p onClick={onClose}>Close</p>
                 </div>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default Home;
