@@ -105,6 +105,7 @@ const Modal = ({ onClose, video }) => {
             await axios.put(`https://cornhub-backend.vercel.app/update-video/${video._id}`, {
                 like: newLikes
             });
+            updateLikes(video._id, newLikes);
         } catch (error) {
             console.error('Error updating likes in database:', error);
         }
