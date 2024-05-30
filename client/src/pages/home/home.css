@@ -44,6 +44,33 @@
   grid-gap: 1rem;
 }
 
+.placeholder {
+  opacity: 0.6;
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 180px;
+  background-color: #ccc;
+  border-radius: 10px 10px 0 0;
+}
+
+.placeholder-img-small {
+  width: 24px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.placeholder-text {
+  background-color: #eee;
+  color: transparent;
+  border-radius: 4px;
+  height: 16px; /* Adjust as needed */
+  margin: 4px 0; /* Adjust as needed */
+}
+
+
 .line {
   display: flex;
   justify-content: space-between;

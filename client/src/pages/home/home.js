@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import './home.css'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import './home.css';
+import axios from 'axios';
 
 function Home() {
-    const [videos, setVideos] = useState([])
-
+    const [videos, setVideos] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentVideo, setCurrentVideo] = useState(null);
 
@@ -18,55 +18,82 @@ function Home() {
         setCurrentVideo(null);
     };
 
-
     useEffect(() => {
-        axios.get(`https://cornhub-backend.vercel.app/get-video`)
-            .then((res) => setVideos(res.data))
-            .catch((err) => console.log(err))
-    }, [])
-
+        axios.get('https://cornhub-backend.vercel.app/get-video')
+            .then((res) => {
+                setVideos(res.data);
+                setLoading(false);
+            })
+            .catch((err) => console.log(err));
+    }, []);
 
     return (
         <div>
             <div className="home-div">
                 <div className="home-container">
                     <div className="home-text">
-                        <div className="line1"><p>Hottest ticker on Cronos is</p><div className="cornhub">$CORNHUB</div></div>
+                        <div className="line1">
+                            <p>Hottest ticker on Cronos is</p>
+                            <div className="cornhub">$CORNHUB</div>
+                        </div>
                         <p>CA: TBA</p>
                     </div>
                     <div className="hot-videos">
                         <p>Hot Videos on Cronos</p>
-                        <img src={require("./cronos.png")} alt="" srcset="" />
+                        <img src={require("./cronos.png")} alt="" />
                     </div>
                     <div className="videos">
-                        {videos.reverse().map((video) => (
-                            <div className="home-box" onClick={() => openModal(video)}>
-                                <div className="home-box-top">
-                                    <img src={`https://img.youtube.com/vi/${video.link}/0.jpg`} alt="" loading='lazy' />
-                                </div>
-                                <div className="home-box-bottom">
-                                    <div className="line">
-                                        <div className="line-left">
-                                            <p>Cornhub</p>
-                                            <img src={require("./tick.png") } alt="" srcset="" />
-                                        </div>
-                                        <div className="line-right" >
-                                            <img src={require('./like.png')} alt="" srcset="" />
-                                            <p>{video.like}</p>
-                                        </div>
+                        {loading
+                            ? Array.from({ length: 5 }).map((_, index) => <LoadingPlaceholder key={index} />)
+                            : videos.reverse().map((video) => (
+                                <div className="home-box" key={video.link} onClick={() => openModal(video)}>
+                                    <div className="home-box-top">
+                                        <img src={`https://img.youtube.com/vi/${video.link}/0.jpg`} alt="" loading='lazy' />
                                     </div>
-                                    <p>{video.title}</p>
+                                    <div className="home-box-bottom">
+                                        <div className="line">
+                                            <div className="line-left">
+                                                <p>Cornhub</p>
+                                                <img src={require("./tick.png")} alt="" />
+                                            </div>
+                                            <div className="line-right">
+                                                <img src={require('./like.png')} alt="" />
+                                                <p>{video.like}</p>
+                                            </div>
+                                        </div>
+                                        <p>{video.title}</p>
+                                    </div>
                                 </div>
-                            </div>
-
-                        ))}
+                            ))}
                         {isModalOpen && <Modal video={currentVideo} onClose={closeModal} />}
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
+const LoadingPlaceholder = () => (
+    <div className="home-box placeholder">
+        <div className="home-box-top">
+            <div className="placeholder-img"></div>
+        </div>
+        <div className="home-box-bottom">
+            <div className="line">
+                <div className="line-left">
+                    <p className="placeholder-text">Loading...</p>
+                    <div className="placeholder-img-small"></div>
+                </div>
+                <div className="line-right">
+                    <div className="placeholder-img-small"></div>
+                    <p className="placeholder-text">...</p>
+                </div>
+            </div>
+            <p className="placeholder-text">Loading title...</p>
+        </div>
+    </div>
+);
+
 const Modal = ({ onClose, video }) => (
     <div className="modal" onClick={onClose}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -89,26 +116,24 @@ const Modal = ({ onClose, video }) => (
             <div className="line3">
                 <div className="panel-socials">
                     <div className="panel-socialicon">
-                        <img src={require("./twitter.webp")} alt="" srcset="" />
+                        <img src={require("./twitter.webp")} alt="" />
                     </div>
                     <div className="panel-socialicon">
-                        <img src={require("./telegram.webp")} alt="" srcset="" />
+                        <img src={require("./telegram.webp")} alt="" />
                     </div>
                     <div className="panel-socialicon">
-                        <img src={require("./discord.webp")} alt="" srcset="" />
+                        <img src={require("./discord.webp")} alt="" />
                     </div>
                     <div className="panel-socialicon">
-                        <img src={require("./dexscreener.webp")} alt="" srcset="" />
+                        <img src={require("./dexscreener.webp")} alt="" />
                     </div>
                 </div>
                 <div className="close">
-                    <p onClick={onClose}>Close </p>
+                    <p onClick={onClose}>Close</p>
                 </div>
-
             </div>
         </div>
     </div>
 );
 
-
-export default Home
+export default Home;
