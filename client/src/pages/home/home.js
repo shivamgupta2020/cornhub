@@ -39,7 +39,7 @@ function Home() {
                         <img src={require("./cronos.png")} alt="" srcset="" />
                     </div>
                     <div className="videos">
-                        {videos.map((video) => (
+                        {videos.reverse().map((video) => (
                             <div className="home-box" onClick={() => openModal(video)}>
                                 <div className="home-box-top">
                                     <img src={`https://img.youtube.com/vi/${video.link}/0.jpg`} alt="" loading='lazy' />
