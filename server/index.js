@@ -119,7 +119,7 @@ app.delete('/delete-image/:id', async (req, res) => {
 
 
 //post a comment
-app.post('/comment', async (req, res) => {
+app.post('/post-comment', async (req, res) => {
     try {
         const data = req.body;
         const response = await Comment.create(data)
@@ -131,7 +131,7 @@ app.post('/comment', async (req, res) => {
     }
 })
 //post an image
-app.post('/image', async (req, res) => {
+app.post('/post-image', async (req, res) => {
     try {
         const data = req.body;
         const response = await Image.create(data)
@@ -143,7 +143,7 @@ app.post('/image', async (req, res) => {
     }
 })
 //post a video
-app.post('/video', async (req, res) => {
+app.post('/post-video', async (req, res) => {
     try {
         const data = req.body;
         const response = await Video.create(data)

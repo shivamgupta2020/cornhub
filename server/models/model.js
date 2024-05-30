@@ -30,7 +30,7 @@ const imageSchema = new Schema({
 const commentSchema = new Schema({
     user:{
         type: String,
-        required: true
+        required: false
     },
     comment:{
         type: String,
