@@ -22,20 +22,20 @@ const Navbar = () => {
               </div>
               <div className="social">
                 <div className="socialicon">
-                  <img src={require("../navbar/twitter.webp")} alt="" srcset="" />
-                  <i className="fab fa-twitter navtitle">Twitter/X</i>
+                  <a href="https://x.com/Cornhubcro/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "15px" }}><img src={require("../navbar/twitter.webp")} alt="" srcset="" />
+                    <i className="fab fa-twitter navtitle">Twitter/X</i></a>
                 </div>
                 <div className="socialicon">
-                  <img src={require("../navbar/telegram.webp")} alt="" srcset="" />
-                  <i className="fab fa-telegram navtitle">Telegram</i>
+                  <a href="https://t.me/+tWDMIwqW0zthNTYx" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "15px" }}><img src={require("../navbar/telegram.webp")} alt="" srcset="" />
+                    <i className="fab fa-telegram navtitle">Telegram</i></a>
                 </div>
                 <div className="socialicon">
-                  <img src={require("../navbar/discord.webp")} alt="" srcset="" />
-                  <i className="fab fa-discord navtitle">Discord</i>
+                  <a href="https://discord.com/invite/VQEmnUzDKV" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "15px" }}><img src={require("../navbar/discord.webp")} alt="" srcset="" />
+                    <i className="fab fa-discord navtitle">Discord</i></a>
                 </div>
                 <div className="socialicon">
-                  <img src={require("../navbar/dexscreener.webp")} alt="" srcset="" />
-                  <i className="fab fa-dexscreener navtitle">DexScreener</i>
+                  <a href="https://google.com" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "15px" }}><img src={require("../navbar/dexscreener.webp")} alt="" srcset="" />
+                    <i className="fab fa-dexscreener navtitle">DexScreener</i></a>
                 </div>
               </div>
               <div className="connect">
@@ -78,17 +78,17 @@ const Navbar = () => {
                     <div className="flyoutinner">
                       <div className="container-fly">
                         <div className="flyoutheader">
-                          <img src={logo} style={{ width: "100px", cursor:"pointer", loading:"lazy", alignSelf:"center", maxWidth:"100%"}} alt="logo" />
+                          <img src={logo} style={{ width: "100px", cursor: "pointer", loading: "lazy", alignSelf: "center", maxWidth: "100%" }} alt="logo" />
                           <div className="close-hamburger" onClick={toggleMenu} style={{ color: "#ff9900", width: "20px", height: "20px" }}>X
                           </div>
                         </div>
                         <ul className="flyoutmenu">
-                        <Link to='/home' onClick={toggleMenu}><li className='flyoutitem'>Welcome to the Cornfield</li></Link>
-                        <Link to='/cornomics' onClick={toggleMenu}><li className='flyoutitem'>Cornomics</li></Link>
-                        <Link to='/presale' onClick={toggleMenu}><li className='flyoutitem'>Popcorn Pre-sale</li></Link>
-                        <Link to='/corntracker' onClick={toggleMenu}><li className='flyoutitem'>Corn Tracker</li></Link>
-                        <Link to='/share' onClick={toggleMenu}><li className='flyoutitem'>Share Your Corny Script</li></Link>
-                        <Link to='/farm' onClick={toggleMenu}><li className='flyoutitem'>Meme Farms</li></Link>
+                          <Link to='/home' onClick={toggleMenu}><li className='flyoutitem'>Welcome to the Cornfield</li></Link>
+                          <Link to='/cornomics' onClick={toggleMenu}><li className='flyoutitem'>Cornomics</li></Link>
+                          <Link to='/presale' onClick={toggleMenu}><li className='flyoutitem'>Popcorn Pre-sale</li></Link>
+                          <Link to='/corntracker' onClick={toggleMenu}><li className='flyoutitem'>Corn Tracker</li></Link>
+                          <Link to='/share' onClick={toggleMenu}><li className='flyoutitem'>Share Your Corny Script</li></Link>
+                          <Link to='/farm' onClick={toggleMenu}><li className='flyoutitem'>Meme Farms</li></Link>
                         </ul>
                       </div>
                     </div>
@@ -106,16 +106,16 @@ const Navbar = () => {
           </div>
           <div className="headerwrapper m">
             <div className="socialicon">
-              <a href="https://www.twitter.com"><i className="navtitle m">Twitter/X</i></a>
+              <a href="https://www.twitter.com/Cornhubcro"><i className="navtitle m">Twitter/X</i></a>
             </div>
             <div className="socialicon">
-              <i className="navtitle m">Telegram</i>
+              <a href="https://t.me/+tWDMIwqW0zthNTYx"><i className="navtitle m">Telegram</i></a>
             </div>
             <div className="socialicon">
-              <i className="navtitle m">Discord</i>
+              <a href="https://www.discord.gg/VQEmnUzDKV"><i className="navtitle m">Discord</i></a>
             </div>
             <div className="socialicon">
-              <i className="navtitle m">DexScreener</i>
+              <a href="https://www.twitter.com"><i className="navtitle m">DexScreener</i></a>
             </div>
           </div>
         </div>

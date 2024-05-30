@@ -19,16 +19,16 @@ function Footer() {
                     </div>
                     <div className="footer-socials">
                         <div className="footer-socialicon">
-                            <img src={require("./twitter.webp")} alt="" srcset="" loading='lazy'/>
+                            <a href="https://x.com/Cornhubcro/" target="_blank" rel="noopener noreferrer"><img src={require("./twitter.webp")} alt="" srcset="" loading='lazy' /></a>
                         </div>
                         <div className="footer-socialicon">
-                            <img src={require("./telegram.webp")} alt="" srcset="" loading='lazy'/>
+                            <a href="https://t.me/+tWDMIwqW0zthNTYx" target="_blank" rel="noopener noreferrer"><img src={require("./telegram.webp")} alt="" srcset="" loading='lazy' /></a>
                         </div>
                         <div className="footer-socialicon">
-                            <img src={require("./discord.webp")} alt="" srcset="" loading='lazy'/>
+                            <a href="https://discord.com/invite/VQEmnUzDKV" target="_blank" rel="noopener noreferrer"><img src={require("./discord.webp")} alt="" srcset="" loading='lazy' /></a>
                         </div>
                         <div className="footer-socialicon">
-                            <img src={require("./dexscreener.webp")} alt="" srcset="" loading='lazy'/>
+                            <a href="https://x.com/Cornhubcro/" target="_blank" rel="noopener noreferrer"><img src={require("./dexscreener.webp")} alt="" srcset="" loading='lazy' /></a>
                         </div>
                     </div>
                 </div>

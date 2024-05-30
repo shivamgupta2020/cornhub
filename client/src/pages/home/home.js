@@ -44,7 +44,7 @@ function Home() {
                     </div>
                     <div className="videos">
                         {loading
-                            ? Array.from({ length: 5 }).map((_, index) => <LoadingPlaceholder key={index} />)
+                            ? Array.from({ length: 8 }).map((_, index) => <LoadingPlaceholder key={index} />)
                             : videos.reverse().map((video) => (
                                 <div className="home-box" key={video.link} onClick={() => openModal(video)}>
                                     <div className="home-box-top">
@@ -116,13 +116,13 @@ const Modal = ({ onClose, video }) => (
             <div className="line3">
                 <div className="panel-socials">
                     <div className="panel-socialicon">
-                        <img src={require("./twitter.webp")} alt="" />
+                        <a href = {`${video.share_link}`}><img src={require("./twitter.webp")} alt="" /></a>
                     </div>
                     <div className="panel-socialicon">
-                        <img src={require("./telegram.webp")} alt="" />
+                        <a href="https://t.me/+tWDMIwqW0zthNTYx"><img src={require("./telegram.webp")} alt="" /></a>
                     </div>
                     <div className="panel-socialicon">
-                        <img src={require("./discord.webp")} alt="" />
+                        <a href= "https://discord.com/invite/VQEmnUzDKV"><img src={require("./discord.webp")} alt="" /></a>
                     </div>
                     <div className="panel-socialicon">
                         <img src={require("./dexscreener.webp")} alt="" />
