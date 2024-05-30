@@ -6,7 +6,7 @@ const port = 5000
 require('dotenv').config()
 app.use(cors(
     {
-        origin: ['https://cornhub-nine.vercel.app', 'https://cornhub-nine.vercel.app/home'],
+        origin: ['*'],
         methods: ['GET, POST'],
         credentials: true
     }

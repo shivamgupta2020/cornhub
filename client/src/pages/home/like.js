@@ -14,7 +14,7 @@ const LikeButton = ({ video }) => {
             setLikeCount(updatedLikeCount);
 
             // Send the updated like count to the server
-            const response = await axios.post(`https://cornhub-backend.vercel.app//update-video/${video.id}`, {
+            const response = await axios.post(`https://cornhub-backend.vercel.app/update-video/${video.id}`, {
                 like: updatedLikeCount
             });
 
