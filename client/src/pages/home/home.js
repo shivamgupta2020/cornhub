@@ -102,6 +102,7 @@ const LoadingPlaceholder = () => (
 
 const Modal = ({ onClose, video, updateLikes }) => {
     const [likes, setLikes] = useState(video.like);
+    const [showTooltip, setShowTooltip] = useState(false);
 
     const handleLikeClick = async () => {
         const newLikes = likes + 1;
@@ -115,6 +116,12 @@ const Modal = ({ onClose, video, updateLikes }) => {
         } catch (error) {
             console.error('Error updating likes in database:', error);
         }
+    };
+
+    const handleCopyClick = () => {
+        navigator.clipboard.writeText("Your text to copy here")
+            .then(() => alert('Text copied to clipboard'))
+            .catch(err => console.error('Could not copy text: ', err));
     };
 
     return (
@@ -131,8 +138,16 @@ const Modal = ({ onClose, video, updateLikes }) => {
                             <img src={require('./like_unfill.png')} style={{ width: "30px", height: "30px" }} id='like_button' />
                             <p id='like'>{`Like (${likes})`}</p>
                         </div>
-                        <div className="line2-right-bottom">
+                        <div className="line2-right-bottom" 
+                            onMouseEnter={() => setShowTooltip(true)} 
+                            onMouseLeave={() => setShowTooltip(false)}>
                             <p style={{ textAlign: "end" }}>Tip Creator</p>
+                            {showTooltip && (
+                                <div className="tooltip">
+                                    <p>add address here</p>
+                                    <button onClick={handleCopyClick}>Copy</button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
