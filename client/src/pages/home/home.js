@@ -102,7 +102,7 @@ const Modal = ({ onClose, video }) => {
         setLikes(newLikes);
 
         try {
-            await axios.post(`https://cornhub-backend.vercel.app/update-video/${video._id}`, {
+            await axios.put(`https://cornhub-backend.vercel.app/update-video/${video._id}`, {
                 like: newLikes
             });
         } catch (error) {
