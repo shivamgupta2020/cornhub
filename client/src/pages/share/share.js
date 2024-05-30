@@ -6,7 +6,7 @@ function Share() {
   const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/get-comment`)
+    axios.get(`https://cornhub-backend.vercel.app//get-comment`)
       .then((res) => setStories(res.data))
       .catch((err) => console.log(err))
   },[])

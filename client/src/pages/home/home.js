@@ -20,7 +20,7 @@ function Home() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/get-video`)
+        axios.get(`https://cornhub-backend.vercel.app//get-video`)
             .then((res) => setVideos(res.data))
             .catch((err) => console.log(err))
     }, [])

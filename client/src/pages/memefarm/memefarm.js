@@ -11,7 +11,7 @@ function Memefarm() {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/get-images`)
+    axios.get(`https://cornhub-backend.vercel.app//get-images`)
       .then((res) => setImages(res.data))
       .catch((err) => console.log(err))
 
