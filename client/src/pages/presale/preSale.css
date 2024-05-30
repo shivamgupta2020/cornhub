@@ -1,0 +1,92 @@
+@font-face {
+    font-family: skribble;
+    src: url(../../../public/Skribble.ttf);
+}
+
+body {
+    font-family: skribble;
+    color: white;
+}
+
+/* .presale {
+    border-bottom: 2px solid #f90 !important;
+} */
+
+.presale-div {
+    width: 100%;
+}
+
+.presale-container {
+    max-width: 900px;
+    margin: 2rem auto 2rem;
+}
+
+.presale-box {
+    display: flex;
+    height: 100%;
+    box-shadow: 20px 20px 20px 7px rgb(255, 255, 255, 30%);
+}
+
+.presale-box-left {
+    width: 25%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f90;
+    border-radius: 15px 0 0 15px;
+}
+
+.presale-box-left img {
+    width: 60%;
+}
+
+.presale-box-right {
+    width: 75%;
+    padding: 5px;
+    background-color: #000000;
+    border-radius: 0 15px 15px 0;
+    padding: 32px;
+    color: #ffffff;
+}
+
+.presale-text-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tokenid {
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #f90;
+    padding: 5px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+    .presale-box {
+        flex-direction: column;
+        box-shadow: none;
+        border: solid 1px #ffffff50;
+        border-radius: 15px;
+    }
+
+    .presale-box-left {
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        padding: 0;
+    }
+
+    .presale-box-right {
+        width: 100%;
+        border-radius: 0 0 15px 15px;
+        padding: 0 4px 8px 4px;
+    }
+    .tokenid {
+        font-size: 10px;
+        flex-direction: column;
+    }
+}

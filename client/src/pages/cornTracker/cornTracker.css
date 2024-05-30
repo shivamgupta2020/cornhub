@@ -1,0 +1,33 @@
+@font-face {
+  font-family: skribble;
+  src: url(../../../public/Skribble.ttf);
+}
+
+body {
+  font-family: skribble;
+  color: white;
+}
+/* .tracker{
+  border-bottom: 2px solid #f90 !important;
+} */
+.tracker-heading-text {
+  text-align: center;
+  color: #ff9900;
+  margin-bottom: 2rem;
+}
+
+.tracker-div {
+  width: 100%;
+}
+
+.tracker-container {
+  max-width: 1323px;
+  margin: 0 auto;
+  display: block;
+}
+.tracker-frame {
+  width: 100%;
+  max-height: 700px;
+  height: 80dvh;
+  margin: 0 auto 2rem;
+}

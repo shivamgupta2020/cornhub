@@ -1,0 +1,274 @@
+@font-face {
+  font-family: skribble;
+  src: url(../../../public/Skribble.ttf);
+}
+
+a {
+  text-decoration: none;
+}
+
+.mobile-header {
+  display: none;
+}
+
+body {
+  background-color: #000000;
+  font-family: skribble;
+}
+
+.header {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #0e0e0e;
+}
+
+.w-container:before,
+.w-container:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+
+.container {
+  max-width: 1323px;
+  margin: 0 auto;
+  display: block;
+  background-color: #0E0E0E;
+}
+
+.headermenucontainer {
+  padding-bottom: 6px;
+  margin-top: 5px;
+}
+
+.innerwrapper {
+  grid-row-gap: 80px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  display: flex;
+}
+
+.logo {
+  align-self: center;
+}
+
+.connect {
+  align-self: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social {
+  flex: 1;
+  grid-row-gap: 15px;
+  align-self: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.socialicon {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  transition: transform 1s;
+  cursor: pointer;
+}
+
+.socialicon:hover {
+  transform: translateY(-3px);
+}
+
+.socialicon:hover i {
+  color: #ff9900;
+}
+
+.headerwrapper {
+  display: flex;
+  align-items: center;
+}
+
+.pages {
+  cursor: pointer;
+  flex: 1;
+  transition: transform 1s;
+}
+
+.pages:hover {
+  transform: translateY(-3px);
+}
+
+.navtitle {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+  font-size: 14px;
+  font-weight: 700;
+
+}
+
+.navtitle:hover {
+  color: #ff9900;
+}
+
+.connect button {
+  background-color: #ff9900;
+  color: #000000;
+  border: solid 1px rgb(255, 255, 255, 50%);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: skribble;
+  transition: transform 1s;
+}
+
+.connect button:hover {
+  /* transform: scale3d(1.1, 1.1, 1.1); */
+  transform: translateY(-3px);
+}
+
+
+.navtitle {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.pages.active .navtitle {
+  font-weight: bold;
+}
+
+.pages.active .navtitle::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: orange;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    display: none;
+  }
+
+  .mobile-header {
+    display: block;
+    width: 100%;
+  }
+
+  .headerwrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .navtitle {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 10.5px;
+    padding-bottom: 10.5px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .innerwrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 1rem 0 1rem;
+  }
+
+  .logo {
+    align-self: center;
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+
+  .connect button {
+    background-color: #ff9900;
+    color: #000000;
+    border: solid 1px rgb(255, 255, 255, 50%);
+    border-radius: 5px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: skribble;
+    transition: transform 1s;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-attachment: scroll !important;
+  }
+
+  .flyout{
+    display: flex;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+  }
+  .flyoutinner {
+    background-color: #030303;
+    width: 80%;
+    height: 100%;
+    display: inline-block;
+  }
+  .container-fly{
+    height: 100%;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .flyoutheader {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .flyoutmenu {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .flyoutitem {
+    color: #c6c6c6;
+    background-color: rgba(30, 30, 30, .8);
+    border-radius: 6px;
+    height: 52px;
+    margin-bottom: 10px;
+    padding: 0 0 0 20px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 52px;
+  }
+  .flyoutouter {
+    background-color: rgba(0, 0, 0, .67);
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+  }
+
+}

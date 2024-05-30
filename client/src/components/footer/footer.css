@@ -1,0 +1,54 @@
+@font-face {
+    font-family: skribble;
+    src: url(../../../public/Skribble.ttf);
+}
+
+body {
+    font-family: skribble;
+    padding: 0 10px 0 10px;
+}
+
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    /* position: relative; */
+    left: 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-text{
+    text-align: center;
+}
+
+.footer-logo{
+    margin: 10px 0 0 0 ;
+}
+
+.footer-container {
+    max-width: 1373px;
+    margin: 0 auto;
+}
+
+.footer-socials{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-tagline-text{
+    margin: 0 0 1.5rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        font-size: 10px;
+    }
+    .footer-text{
+        display: none;
+    }
+    .footer{
+        padding: 0;
+    }
+}

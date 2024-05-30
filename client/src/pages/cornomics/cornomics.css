@@ -1,0 +1,11 @@
+.cornomics-container{
+    
+    max-width: 700px;
+    margin: 0 auto;
+    display: block;
+}
+
+.cornomics{
+    margin-top: 20px;
+    width: 100%;
+}
