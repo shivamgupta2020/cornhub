@@ -75,13 +75,12 @@ function Home() {
                         {isModalOpen && <Modal video={currentVideo} onClose={closeModal} updateLikes={updateVideoLikes} />}
                     </div>
                     <div className="footer-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </div>
+                        The content on this website is for fun,entertainment and informational purpose only and is not intended as financial advice. Cryptocurrency investments are subject to high market risks and volatility. Readers are advised to conduct their own research or consult with a professional financial advisor before making any investment decisions. Meme coin investments are subject to high volatility and market risk. Cornhub will not be liable for any financial losses incurred based on information presented here.                    </div>
                 </div>
             </div>
-            <Footer position="relative"/>
+            <Footer position="relative" />
         </div>
-        
+
     );
 }
 
