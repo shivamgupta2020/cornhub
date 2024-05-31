@@ -26,7 +26,7 @@ function PreSale() {
                 <div className="presale-container">
                     <div className="presale-box">
                         <div className="presale-box-left">
-                            <img src={require("./tmp.png")} alt="" srcset="" />
+                            <img src={require("./tmp.webp")} alt="" srcset="" />
                         </div>
                         <div className="presale-box-right">
                             <h3>Looks familiar, Eh!</h3>
