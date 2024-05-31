@@ -2,9 +2,9 @@ import React from 'react'
 import logo from './logo.webp'
 import './footer.css'
 
-function Footer() {
+function Footer(props) {
     return (
-        <div className="footer">
+        <div className="footer" style={{position:`${props.position}`}}>
             <div className="footer-container">
                 
                 {/* <div className="footer-option"></div> */}

@@ -7,8 +7,8 @@ import {
   Legend,
   plugins
 } from 'chart.js'
-
 import { Pie } from 'react-chartjs-2'
+import Footer from '../../components/footer/footer'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 ChartJS.defaults.color = '#f90';
@@ -66,6 +66,7 @@ function Cornnomics() {
           </div>
         </div>
       </div>
+      <Footer position="absolute"/>
     </div>
   )
 }

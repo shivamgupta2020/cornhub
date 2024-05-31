@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './share.css';
 import axios from 'axios';
+import Footer from '../../components/footer/footer';
 
 function Share() {
   const [stories, setStories] = useState([]);
@@ -75,6 +76,7 @@ function Share() {
           </div>
         </div>
       </div>
+      <Footer position="absolute"/>
     </div>
   );
 }

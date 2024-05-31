@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './home.css';
 import axios from 'axios';
+import Footer from '../../components/footer/footer';
 
 function Home() {
     const [videos, setVideos] = useState([]);
@@ -78,7 +79,9 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <Footer position="relative"/>
         </div>
+        
     );
 }
 

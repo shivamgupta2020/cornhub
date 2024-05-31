@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './memefarm.css'
 import {saveAs} from 'file-saver'
 import axios from 'axios'
+import Footer from '../../components/footer/footer'
 
 function Memefarm() {
   const [images, setImages] = useState([]);
@@ -54,6 +55,7 @@ function Memefarm() {
           </div>
         </div>
       </div>
+      <Footer position="relative"/>
     </div>
   )
 }

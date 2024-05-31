@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './preSale.css'
+import Footer from '../../components/footer/footer'
 
 function PreSale() {
     const string = '0x7fbB28b8B6daFD35168C7E1f90bfF91b4138d7D4';
@@ -130,6 +131,7 @@ function PreSale() {
                     </div>
                 </div>
             </div>
+            <Footer position="relative"/>
         </div>
     )
 }

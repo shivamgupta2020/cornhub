@@ -1,0 +1,38 @@
+.Sparks-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.Spark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.Spark.red {
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.5), rgba(200, 0, 0, 0.3), rgba(150, 0, 0, 0.2) 70%);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+.Spark.blue {
+    background: radial-gradient(circle, rgba(0, 0, 255, 0.5), rgba(0, 0, 200, 0.3), rgba(0, 0, 150, 0.2) 70%);
+    box-shadow: 0 0 8px rgba(0, 0, 255, 0.5);
+}
+
+.Spark::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 50%, transparent 70%);
+    border-radius: 50%;
+}

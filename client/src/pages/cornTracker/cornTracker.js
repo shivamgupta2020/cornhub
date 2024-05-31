@@ -1,5 +1,6 @@
 import React from 'react'
 import './cornTracker.css'
+import Footer from '../../components/footer/footer'
 
 function CornTracker() {
   return (
@@ -12,6 +13,7 @@ function CornTracker() {
           <iframe src="https://dexscreener.com/cronos/0xc7a139c804a3bbdfe90d32c100dffeca1a2f735c?embed=1&theme=dark" width="100%" frameBorder="0" height="100%" title="dexscreener"/>
         </div>
       </div>
+      <Footer position="relative"/>
     </div>
   )
 }

@@ -25,7 +25,6 @@ function App() {
           <Route path="/share" element={<Share />} />
           <Route path="/farm" element={<Memefarm/>} />
         </Routes>
-        <Footer />
       </div>
     </Router>)
 }
