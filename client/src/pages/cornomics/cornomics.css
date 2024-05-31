@@ -1,11 +1,23 @@
 .cornomics-container{
-    
-    max-width: 700px;
+    display: flex;
+    max-width: 900px;
     margin: 0 auto;
-    display: block;
+    align-items: center;
+    gap: 100px;
+    justify-content: center;
+    font-size: larger;
 }
 
 .cornomics{
     margin-top: 20px;
     width: 100%;
+    
+}
+
+@media screen and (max-width: 768px){
+    .cornomics-container{
+        flex-direction: column;
+        gap: 20px;
+    }
+    
 }
