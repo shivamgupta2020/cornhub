@@ -162,4 +162,3 @@ mongoose.connect(process.env.DB_URI).then((result) => {
 }).catch((err) => {
     console.log('Failed to connect to the database', err)
 })
-
