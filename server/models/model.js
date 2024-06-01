@@ -28,10 +28,6 @@ const imageSchema = new Schema({
 })
 
 const commentSchema = new Schema({
-    user:{
-        type: String,
-        required: false
-    },
     comment:{
         type: String,
         required: true
