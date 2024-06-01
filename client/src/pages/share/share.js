@@ -67,7 +67,7 @@ function Share() {
                 <p>Loading stories...</p>
               ) : (
                 [...stories].reverse().map((story, index) => (
-                  <div className="story-item" key={index}>
+                  <div className="story-item" key={stories.length()-index}>
                     <div className="story-item__text"><p style={{color:"#f90"}}>Story {index}:</p> {story.comment}</div>
                   </div>
                 ))
