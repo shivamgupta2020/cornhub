@@ -60,13 +60,13 @@ function Cornnomics() {
                 <li style={{color:"orange"}}>Presale: 48%</li>
                 <li style={{color:"white"}}>LP: 35%</li>
                 <li style={{color:"green"}}>Community Airdrops: 12%</li>
-                <li style={{color:"yellow"}}>Operations: 5%</li>
+                <li style={{color:"yellow"}}>Operations/ Community Giveaways/ Burns: 5%</li>
                 <li style={{color:"purple"}}>Team- A Big Fat, Zero!</li>
               </ul>
           </div>
         </div>
       </div>
-      <Footer position="absolute"/>
+      <Footer position="relative"/>
     </div>
   )
 }

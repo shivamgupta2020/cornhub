@@ -18,6 +18,7 @@
     .cornomics-container{
         flex-direction: column;
         gap: 20px;
+        
     }
     
 }
