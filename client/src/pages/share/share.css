@@ -48,7 +48,7 @@
     flex-direction: column;
 }
 .story-item{
-    width: 100%;
+    width: 90;
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #f90;

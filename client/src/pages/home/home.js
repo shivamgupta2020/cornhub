@@ -74,7 +74,7 @@ function Home() {
                             ))}
                         {isModalOpen && <Modal video={currentVideo} onClose={closeModal} updateLikes={updateVideoLikes} />}
                     </div>
-                    <div className="banner" style={{display:"flex", flexShrink:"1"}}>
+                    <div className="banner" style={{display:"flex", flexShrink:"1", margin:"20px 0"}}>
                         <img src={require("./banner.png")} alt="" style={{objectFit:"cover", width:"100%"}}/>
                     </div>
                     <div className="footer-text">
