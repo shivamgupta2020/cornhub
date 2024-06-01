@@ -47,7 +47,7 @@ function Memefarm() {
           </div>
           <div className="heading">BROWSE MEME</div>
           <div className="collection">
-            {images.map((image, index) => (
+            {[...images].reverse().map((image, index) => (
               <div className="image-box" key={index}>
                 <img src={image.link} alt="" loading="lazy" />
               </div>

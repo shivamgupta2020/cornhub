@@ -38,9 +38,9 @@ const Navbar = () => {
                     <i className="fab fa-dexscreener navtitle">DexScreener</i></a>
                 </div>
               </div>
-              <div className="connect">
+              {/* <div className="connect">
                 <button type="button" className='navconnect'>Connect</button>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="headerwrapper">

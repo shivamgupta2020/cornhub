@@ -50,10 +50,9 @@
 .story-item{
     width: 100%;
     margin: 10px 0;
-    padding: 10px 0;
+    padding: 10px;
     border: 1px solid #f90;
     border-radius: 5px;
     background-color: black;
     font-family: Skribble;
-    text-align: center;
 }

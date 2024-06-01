@@ -66,9 +66,9 @@ function Share() {
               {loading ? (
                 <p>Loading stories...</p>
               ) : (
-                stories.map((story, index) => (
+                [...stories].reverse().map((story, index) => (
                   <div className="story-item" key={index}>
-                    <div className="story-item__text">{story.comment}</div>
+                    <div className="story-item__text">Story {index}: {story.comment}</div>
                   </div>
                 ))
               )}
@@ -76,7 +76,7 @@ function Share() {
           </div>
         </div>
       </div>
-      <Footer position="absolute"/>
+      <Footer position="relative"/>
     </div>
   );
 }
