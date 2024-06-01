@@ -20,7 +20,7 @@ function Cornnomics() {
     datasets: [
       {
         data: [48, 35, 12, 5, 0],
-        backgroundColor: ['red', 'blue', 'green', 'yellow', 'purple']
+        backgroundColor: ['orange', 'white', 'green', 'yellow', 'purple']
       }
     ]
   }
@@ -57,8 +57,8 @@ function Cornnomics() {
             <div className="piechart"><Pie data={data} options={options}></Pie></div>
             <div className="labels">
               <ul>
-                <li style={{color:"red"}}>Presale: 48%</li>
-                <li style={{color:"blue"}}>LP: 35%</li>
+                <li style={{color:"orange"}}>Presale: 48%</li>
+                <li style={{color:"white"}}>LP: 35%</li>
                 <li style={{color:"green"}}>Community Airdrops: 12%</li>
                 <li style={{color:"yellow"}}>Operations: 5%</li>
                 <li style={{color:"purple"}}>Team- A Big Fat, Zero!</li>
