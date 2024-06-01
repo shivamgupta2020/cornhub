@@ -16,7 +16,7 @@ ChartJS.defaults.color = '#f90';
 
 function Cornnomics() {
   const data = {
-    labels: ['Presale', 'LP', 'Community Airdrops', 'Operations', 'Team- A Big Fat, Zero!'],
+    labels: ['Presale', 'LP', 'Community Airdrops', 'Operations/ Community Giveaways/ Burns', 'Team- A Big Fat, Zero!'],
     datasets: [
       {
         data: [48, 35, 12, 5, 0],
