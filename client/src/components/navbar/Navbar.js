@@ -100,7 +100,7 @@ const Navbar = () => {
                 <img src={logo} style={{ height: "25px" }} alt="logo" />
               </div>
               <div className="connect m">
-                <button type="button" className='navconnect'>Connect</button>
+                <button type="button" className='navconnect'>       </button>
               </div>
             </div>
           </div>
