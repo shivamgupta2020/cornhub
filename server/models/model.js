@@ -18,14 +18,14 @@ const videoSchema = new Schema({
         type: Number,
         required: true
     }
-},{timestamps: true})
+})
 
 const imageSchema = new Schema({
     link:{
         type: String,
         required: true
     }
-},{Timestamp: true})
+})
 
 const commentSchema = new Schema({
     user:{
@@ -36,7 +36,7 @@ const commentSchema = new Schema({
         type: String,
         required: true
     }
-},{Timestamp: true})
+})
 
 const  Video = mongoose.model('video', videoSchema);
 const  Image = mongoose.model('image', imageSchema);
