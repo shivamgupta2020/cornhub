@@ -75,7 +75,7 @@ function Home() {
                         {isModalOpen && <Modal video={currentVideo} onClose={closeModal} updateLikes={updateVideoLikes} />}
                     </div>
                     <div className="banner" style={{display:"flex", flexShrink:"1", margin:"20px 0"}}>
-                        <img src={require("./banner.png")} alt="" style={{objectFit:"cover", width:"100%"}}/>
+                        <img src={require("./banner.webp")} alt="" style={{objectFit:"cover", width:"100%"}}/>
                     </div>
                     <div className="footer-text">
                         The content on this website is for fun,entertainment and informational purpose only and is not intended as financial advice. Cryptocurrency investments are subject to high market risks and volatility. Readers are advised to conduct their own research or consult with a professional financial advisor before making any investment decisions. Meme coin investments are subject to high volatility and market risk. Cornhub will not be liable for any financial losses incurred based on information presented here.                    </div>
