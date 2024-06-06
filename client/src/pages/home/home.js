@@ -19,13 +19,18 @@ function Home() {
         setCurrentVideo(null);
     };
 
+    const fetchVideos = async () => {
+        try {
+            const res = await axios.get('https://cornhub-backend.vercel.app/get-video');
+            setVideos(res.data);
+            setLoading(false);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     useEffect(() => {
-        axios.get('https://cornhub-backend.vercel.app/get-video')
-            .then((res) => {
-                setVideos(res.data);
-                setLoading(false);
-            })
-            .catch((err) => console.log(err));
+        fetchVideos();
     }, []);
 
     const updateVideoLikes = (videoId, newLikes) => {
