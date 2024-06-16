@@ -3,6 +3,7 @@ import './home.css';
 import axios from 'axios';
 import Footer from '../../components/footer/footer';
 
+
 function Home() {
     const [videos, setVideos] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -13,6 +14,7 @@ function Home() {
         setCurrentVideo(video);
         setIsModalOpen(true);
     };
+
 
     const closeModal = () => {
         setIsModalOpen(false);
@@ -28,6 +30,7 @@ function Home() {
             console.log(err);
         }
     };
+
 
     useEffect(() => {
         fetchVideos();
@@ -130,6 +133,7 @@ const Modal = ({ onClose, video, updateLikes }) => {
             console.error('Error updating likes in database:', error);
         }
     };
+
 
     const handleCopyClick = () => {
         navigator.clipboard.writeText("Your text to copy here")

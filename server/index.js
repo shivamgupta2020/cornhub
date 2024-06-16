@@ -4,15 +4,9 @@ const cors = require('cors')
 const { default: mongoose } = require('mongoose')
 const port = 5000
 require('dotenv').config()
-app.use(cors(
-    {
-        origin: ['https://cornhub-nine.vercel.app'],
-        methods: ['GET, POST', 'PUT'],
-        credentials: true
-    }
-))
+app.use(cors())
 app.use(express.json())
-const { Video, Image, Comment } = require('./models/model')
+const { Video, Image, Comment,User } = require('./models/model')
 
 //get all videos
 app.get('/get-video', async (req, res) => {
@@ -24,6 +18,7 @@ app.get('/get-video', async (req, res) => {
         res.send('Error')
     }
 })
+
 //get all images
 app.get('/get-images', async (req, res) => {
     try {
@@ -38,6 +33,17 @@ app.get('/get-images', async (req, res) => {
 app.get('/get-comment', async (req, res) => {
     try {
         const response = await Comment.find({})
+        res.json(response)
+    } catch (error) {
+        console.log(error)
+        res.send('Error')
+    }
+})
+
+//get all users
+app.get('/get-user', async (req, res) => {
+    try {
+        const response = await User.find({})
         res.json(response)
     } catch (error) {
         console.log(error)
@@ -82,6 +88,19 @@ app.put('/update-video/:id', async (req, res) => {
 app.put('/update-image/:id', async (req, res) => {
     try {
         const response = await Image.findByIdAndUpdate(req.params.id, req.body)
+        console.log(response)
+        res.send('Data updated')
+    }
+    catch (error) {
+        console.log(error)
+        res.send('Error')
+    }
+})
+
+//update a user like_time
+app.put('/update-user/:id', async (req, res) => {
+    try {
+        const response = await User.findByIdAndUpdate(req.params.id, req.body)
         console.log(response)
         res.send('Data updated')
     }
@@ -147,6 +166,19 @@ app.post('/post-video', async (req, res) => {
     try {
         const data = req.body;
         const response = await Video.create(data)
+        console.log(response)
+        res.send('Data uploaded')
+    } catch (error) {
+        console.log(error)
+        res.send('Error')
+    }
+})
+
+//post a user
+app.post('/post-user', async (req, res) => {
+    try {
+        const data = req.body;
+        const response = await User.create(data)
         console.log(response)
         res.send('Data uploaded')
     } catch (error) {

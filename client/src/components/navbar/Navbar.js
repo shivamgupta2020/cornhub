@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import logo from '../navbar/logo.webp'
 import './Navbar.css'
 import { Link, useLocation } from 'react-router-dom'
+import Wallet from '../wallet/wallet'
+
 
 const Navbar = () => {
   const currentLocation = useLocation()
@@ -38,9 +40,11 @@ const Navbar = () => {
                     <i className="fab fa-dexscreener navtitle">DexScreener</i></a>
                 </div>
               </div>
-              {/* <div className="connect">
-                <button type="button" className='navconnect'>Connect</button>
-              </div> */}
+              <div className="connect">
+                <div className='navconnect'>
+                  <Wallet />
+                </div>
+              </div>
             </div>
           </div>
           <div className="headerwrapper">
@@ -100,7 +104,7 @@ const Navbar = () => {
                 <img src={logo} style={{ height: "25px" }} alt="logo" />
               </div>
               <div className="connect m">
-                <button type="button" className='navconnect'>       </button>
+                <Wallet />
               </div>
             </div>
           </div>

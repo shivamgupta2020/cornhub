@@ -1,0 +1,24 @@
+@font-face {
+    font-family: skribble;
+    src: url(../../../public/Skribble.ttf);
+}
+
+button{
+    background-color: #ff9900;
+    color: #000000;
+    /* border: solid 1px rgb(255, 255, 255, 50%); */
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-family: skribble;
+    transition: transform 1s, border 1s ;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background-color: transparent;
+    border: solid 1px #ff9900;
+    color: #ff9900;
+  }

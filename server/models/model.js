@@ -34,11 +34,24 @@ const commentSchema = new Schema({
     }
 })
 
+const userSchema = new Schema({
+    address:{
+        type: String,
+        required: true
+    },
+    last_liked:{
+        type: Date,
+        required: false
+    }
+})
+
 const  Video = mongoose.model('video', videoSchema);
 const  Image = mongoose.model('image', imageSchema);
 const  Comment = mongoose.model('comment', commentSchema);
+const  User = mongoose.model('user', userSchema);
 module.exports = {
     Video,
     Image,
-    Comment
+    Comment,
+    User
 }
